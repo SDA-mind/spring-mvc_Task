@@ -1,0 +1,35 @@
+<!--<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+
+<p data-th-text="#{label.title}"></p>
+<ul>
+    <li>
+        <a href="/cars?lang=en" data-th-text="#{label.lang.en}"></a>
+    </li>
+    <li>
+        <a href="/cars?lang=ru" data-th-text="#{label.lang.ru}"></a>
+    </li>
+</ul>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>Car Name</th>
+            <th>Car Series</th>
+            <th>Car Engine</th>
+        </tr>
+        <tr th:each="Car : ${carList}">
+            <td th:utext="${Car.name}">...</td>
+            <td th:utext="${Car.series}">...</td>
+            <td th:utext="${Car.engine}">...</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
