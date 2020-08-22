@@ -12,10 +12,11 @@ import java.util.List;
 @Controller
 public class CarsController {
     @Autowired
-    private ServiceImpl service;
+    private ServiceImpl serviceImpl;
+
     @GetMapping(value = "/cars")
     public String printCars(ModelMap model) {
-        List<Car> arrayList = service.getCarList();
+        List<Car> arrayList = serviceImpl.getCarList();
         model.addAttribute("carList",arrayList);
         return "cars";
     }
